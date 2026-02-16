@@ -13,7 +13,7 @@ import photoWebp from "@/assets/photo.jpg?w=628;1256&format=webp&as=srcset";
 import photoJpg from "@/assets/photo.jpg?w=628&format=jpg";
 
 // circInOut easing for snappy animations
-const circInOut = [0.785, 0.135, 0.15, 0.86];
+const circInOut = [0.785, 0.135, 0.15, 0.86] as const;
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },

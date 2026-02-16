@@ -4,7 +4,7 @@ import { TestimonialCarousel } from "@/components/TestimonialCarousel";
 import { Button } from "@/components/ui/button";
 
 // circInOut easing for consistent animations
-const circInOut = [0.785, 0.135, 0.15, 0.86];
+const circInOut = [0.785, 0.135, 0.15, 0.86] as const;
 
 // Animation variants
 const fadeInUp = {
