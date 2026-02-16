@@ -1,6 +1,21 @@
 import { AlertTriangle } from "lucide-react";
+import { motion } from "motion/react";
 import { CalEmbed } from "@/components/CalEmbed";
 import { Button } from "@/components/ui/button";
+
+// circInOut easing for consistent animations
+const circInOut = [0.785, 0.135, 0.15, 0.86];
+
+// Animation variants
+const scaleIn = {
+	initial: { opacity: 0, scale: 0.95 },
+	whileInView: { opacity: 1, scale: 1 },
+};
+
+const fadeIn = {
+	initial: { opacity: 0 },
+	whileInView: { opacity: 1 },
+};
 
 export function Booking() {
 	return (
@@ -8,7 +23,12 @@ export function Booking() {
 			<div className="max-w-6xl mx-auto px-6">
 				<div className="max-w-4xl mx-auto text-center space-y-8">
 					{/* Urgency CTA */}
-					<div className="border-2 border-foreground/20 rounded-2xl p-8 bg-card">
+					<motion.div
+						className="border-2 border-foreground/20 rounded-2xl p-8 bg-card"
+						{...scaleIn}
+						viewport={{ once: true, margin: "-100px" }}
+						transition={{ duration: 0.6, ease: circInOut }}
+					>
 						<AlertTriangle className="size-10 text-foreground mx-auto mb-4" />
 						<h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
 							Only 3 Slots Remaining for the May/June Exam Push
@@ -28,12 +48,17 @@ export function Booking() {
 						>
 							Book My Free 15-Min Strategy Call
 						</Button>
-					</div>
+					</motion.div>
 
 					{/* Cal.com Embed */}
-					<div className="mt-8">
+					<motion.div
+						className="mt-8"
+						{...fadeIn}
+						viewport={{ once: true, margin: "-100px" }}
+						transition={{ duration: 0.5, delay: 0.2, ease: circInOut }}
+					>
 						<CalEmbed />
-					</div>
+					</motion.div>
 				</div>
 			</div>
 		</section>
