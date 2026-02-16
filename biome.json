@@ -6,6 +6,9 @@
 			"recommended": true,
 			"correctness": {
 				"noUnusedImports": "warn"
+			},
+			"suspicious": {
+				"noArrayIndexKey": "off"
 			}
 		}
 	},
@@ -30,6 +33,6 @@
 		}
 	},
 	"files": {
-		"includes": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.json"]
+		"includes": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.json", "!!**/dist", "!!**/node_modules"]
 	}
 }
